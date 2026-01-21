@@ -1,0 +1,101 @@
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212; /* fondo oscuro tipo Spotify */
+  padding: 20px;
+}
+
+.logo {
+  height: 60px;   /* ajusta el tamaño del logo */
+  width: auto;    /* mantiene proporciones */
+}
+
+
+
+h1 {
+  margin-bottom: 30px;
+  color: #9ea4d5;
+}
+
+.albums {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las imágenes bajen a otra fila */
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.albums img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.albums img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #e8f7ed;
+}
+
+.songs {
+  display: none;
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.Cancion {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* 📱 Responsive: pantallas pequeñas */
+@media (max-width: 768px) {
+  .albums img {
+    width: 90px;
+    height: 90px;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  .songs {
+    font-size: 12px;
+  }
+}
+
+/* 📱 Responsive: móviles muy pequeños */
+@media (max-width: 480px) {
+  /*.albums {
+    flex-direction: column; /* Portadas en columna 
+    align-items: center;
+  }*/
+  
+  .albums {
+    gap: 10px;
+    margin-bottom: 10px;
+
+   } 
+
+  .albums img {
+    width: 40px;
+    height: 40px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  .logo {
+  height: 40px;   /* ajusta el tamaño del logo */
+  width: auto;    /* mantiene proporciones */
+  }
+
+}
