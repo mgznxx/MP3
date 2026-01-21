@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing con Discos Responsive</title>
+  <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+
+  <header class="header">
+    <img src="img/LogoA.png" alt="Logo ALFA" class="logo">
+  </header>
+
+  <div class="container">
+    <div class="albums">
+      <img src="img/Porta.jpg" alt="En todo tiempo" onclick="showSongs('songs1')">
+      <img src="img/Cover2.jpg" alt="Bendecidos" onclick="showSongs('songs2')">
+      <img src="img/Cover8.jpg" alt="En la gloria" onclick="showSongs('songs3')">
+      <img src="img/TapaD4.jpg" alt="Ven a mi" onclick="showSongs('songs4')">
+      <img src="img/TapaconLogo.jpg" alt="Ineditos" onclick="showSongs('songs5')">
+    </div>
+
+    <!-- Área dinámica de canciones -->
+    <div id="songsArea">
+      
+      <div id="songs1" class="songs">
+        <h5>Album</h5>
+        <h2>En todo tiempo</h2>
+        <h4>ALFA - 2024 - 10 canciones</h4>
+        <br>
+        <a class="Cancion">✝️ <b>01-</b> En todo tiempo</a>
+        <audio controls src="mp3D1/EnTodo.mp3"></audio><br><br>
+        <a class="Cancion">✝️ <b>02-</b> Y tú</a>
+        <audio controls src="mp3D1/Ytu.mp3"></audio><br><br>
+        <a class="Cancion">✝️ <b>03-</b> En Tí Confío</a>
+        <audio controls src="mp3D1/Confio.mp3"></audio><br><br>
+        <a class="Cancion">✝️ <b>04-</b> Gloria</a>
+        <audio controls src="mp3D1/Gloria.mp3"></audio><br><br>
+        <a class="Cancion">✝️ <b>05-</b> Ven</a>
+        <audio controls src="mp3D1/Ven.mp3"></audio><br><br>
+        <a class="Cancion">✝️ <b>06-</b> Redención</a>
+        <audio controls src="mp3D1/Redencion.mp3"></audio><br><br>
+        <a class="Cancion">✝️ <b>07-</b> Y sigo esperandote</a>
+        <audio controls src="mp3D1/YSigo.mp3"></audio><br><br>
+        <a class="Cancion">✝️ <b>08-</b> Sus pasos</a>
+        <audio controls src="mp3D1/SusPasos.mp3"></audio><br><br>
+        <a class="Cancion">✝️ <b>09-</b> Que poca es tú Fé</a>
+        <audio controls src="mp3D1/QuePoca.mp3"></audio><br><br>
+        <a class="Cancion">✝️ <b>10-</b> Sigamoslo</a>
+        <audio controls src="mp3D1/sigamoslo.mp3"></audio><br><br>
+      </div>
+
+      <!-- Los demás bloques de canciones siguen igual, solo cambiando las rutas a mp3D2/, mp3D3/, etc. -->
+      
+    </div>
+  </div>
+
+  <script>
+    function showSongs(id) {
+      const allSongs = document.querySelectorAll('.songs');
+      allSongs.forEach(s => s.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
