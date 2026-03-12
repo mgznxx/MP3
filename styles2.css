@@ -1,10 +1,25 @@
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  background-color: #121212;
+  background-color: #121212; /* color base oscuro */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #ffffff;
   text-align: center;
   padding: 20px;
+  min-height: 100vh;
+  position: relative;
 }
+
+/* Capa oscura encima del fondo para que el texto se lea */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.802); /* oscurece el fondo */
+  z-index: -1; /* queda detrás del contenido */
+}
+
 
 .header {
   display: flex;
@@ -19,7 +34,18 @@ body {
   width: auto;    /* mantiene proporciones */
 }
 
+.songs {
+  display: none;              /* oculto por defecto */
+  opacity: 0;                 /* invisible */
+  transform: translateY(60px); /* desplazado hacia abajo */
+  transition: all 0.6s ease;  /* animación suave */
+}
 
+.songs.show {
+  display: block;             /* visible */
+  opacity: 1;                 /* aparece */
+  transform: translateY(0);   /* vuelve a su lugar */
+}
 
 h1 {
   margin-bottom: 30px;

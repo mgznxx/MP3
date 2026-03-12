@@ -18,11 +18,11 @@
 
   <div class="container">
     <div class="albums">
-      <img src="ibot/Porta.jpg" alt="En todo tiempo" onclick="showSongs('songs1')">
-      <img src="ibot/Cover2.jpg" alt="Bendecidos" onclick="showSongs('songs2')">
-      <img src="ibot/cover8.jpg" alt="En la gloria" onclick="showSongs('songs3')">
-      <img src="ibot/TapaD4.jpg" alt="Ven a mi" onclick="showSongs('songs4')">
-      <img src="ibot/TapaconLogo.jpg" alt="Ineditos" onclick="showSongs('songs5')">
+      <img src="ibot/Porta.jpg" alt="En todo tiempo" onclick="showSongs('songs1','ibot/.jpg' )">
+      <img src="ibot/Cover2.jpg" alt="Bendecidos" onclick="showSongs('songs2','ibot/.jpg')">
+      <img src="ibot/cover8.jpg" alt="En la gloria" onclick="showSongs('songs3','ibot/.jpg')">
+      <img src="ibot/TapaD4.jpg" alt="Ven a mi" onclick="showSongs('songs4','ibot/.jpg')">
+      <img src="ibot/TapaconLogo.jpg" alt="Ineditos" onclick="showSongs('songs5','ibot/.jpg')">
     </div>
 
     <!-- Área dinámica de canciones -->
@@ -201,6 +201,12 @@
         <audio controls src="MP3D5/SobreLos.mp3"></audio><br><br>
         <a class="Cancion">✝️ <b>12-</b> Ven</a>
         <audio controls src="MP3D5/Ven.mp3"></audio><br><br>
+        <a class="Cancion">✝️ <b>13-</b> Cerrado</a>
+        <audio controls src="MP3D5/CC2.mp3"></audio><br><br>
+        <a class="Cancion">✝️ <b>14-</b> Suenen</a>
+        <audio controls src="MP3D5/Suenen.mp3"></audio><br><br>
+        <a class="Cancion">✝️ <b>15-</b> Un paso</a>
+        <audio controls src="MP3D5/unPaso.mp3"></audio><br><br>
          
       </div>
 
@@ -216,5 +222,46 @@
       document.getElementById(id).style.display = 'block';
     }
   </script>
+
+  <script>
+  function showSongs(id, bgImage) {
+    const allSongs = document.querySelectorAll('.songs');
+    allSongs.forEach(s => {
+      s.classList.remove('show');
+      s.style.display = 'none';
+    });
+
+    const selected = document.getElementById(id);
+    if (selected) {
+      selected.style.display = 'block';
+      setTimeout(() => selected.classList.add('show'), 50);
+    }
+
+    // Cambiar fondo del área con la portada del álbum
+    const songsArea = document.getElementById('songsArea');
+    songsArea.style.backgroundImage = `url(${bgImage})`;
+  }
+</script>
+
+<script>
+  function showSongs(id, bgImage) {
+    const allSongs = document.querySelectorAll('.songs');
+    allSongs.forEach(s => {
+      s.classList.remove('show');
+      s.style.display = 'none';
+    });
+
+    const selected = document.getElementById(id);
+    if (selected) {
+      selected.style.display = 'block';
+      setTimeout(() => selected.classList.add('show'), 50);
+    }
+
+    // Cambiar fondo de toda la página
+    document.body.style.backgroundImage = `url(${bgImage})`;
+  }
+</script>
+
+
 </body>
 </html>
